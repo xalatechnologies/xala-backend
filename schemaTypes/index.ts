@@ -10,6 +10,10 @@ import footer from './footer';
 import contactForm from './contactForm';
 import contactFormSubmission from './contactFormSubmission';
 import locale from './locale';
+import technology from './technology';
+import team from './team';
+import client from './client';
+import category from './category';
 
 export const schemaTypes = [
   service,
@@ -24,4 +28,8 @@ export const schemaTypes = [
   contactForm,
   contactFormSubmission,
   locale,
+  technology,
+  team,
+  client,
+  category
 ];

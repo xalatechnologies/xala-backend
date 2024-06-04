@@ -11,6 +11,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        slugify: input => input.toLowerCase().replace(/\s+/g, '-').slice(0, 96)
+      }
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
@@ -43,7 +53,7 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      subtitle: 'locale',
+      subtitle: 'locale.title',
       media: 'thumbnail',
     },
   },

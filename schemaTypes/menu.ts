@@ -38,7 +38,7 @@ export default defineType({
   preview: {
     select: {
       title: 'label',
-      subtitle: 'locale',
+      subtitle: 'locale.title',
       media: 'icon',
     },
   },

@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'translation',
@@ -24,24 +24,14 @@ export default defineType({
     defineField({
       name: 'category',
       title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Home', value: 'home'},
-          {title: 'About', value: 'about'},
-          {title: 'Services', value: 'services'},
-          {title: 'Contact', value: 'contact'},
-          {title: 'Blog', value: 'blog'},
-          {title: 'News', value: 'news'},
-          {title: 'Case Study', value: 'caseStudies'},
-        ],
-      },
+      type: 'reference',
+      to: [{ type: 'category' }],
     }),
   ],
   preview: {
     select: {
-      title: 'key',
-      subtitle: 'locale',
+      title: 'value',
+      subtitle: 'locale.title',
     },
   },
-})
+});

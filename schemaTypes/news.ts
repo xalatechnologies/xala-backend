@@ -11,6 +11,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        slugify: input => input.toLowerCase().replace(/\s+/g, '-').slice(0, 96)
+      }
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'text',
@@ -22,6 +32,12 @@ export default defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'technologies',
+      title: 'Technologies',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'technology' }] }],
     }),
     defineField({
       name: 'locale',
@@ -43,7 +59,7 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      subtitle: 'locale',
+      subtitle: 'locale.title',
       media: 'thumbnail',
     },
   },

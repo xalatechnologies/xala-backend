@@ -20,7 +20,7 @@ export default defineType({
   preview: {
     select: {
       title: 'text',
-      subtitle: 'locale',
+      subtitle: 'locale.title',
     },
   },
 });
